@@ -11,3 +11,13 @@ fun readInput(name: String) = File("src", "$name.txt").readLines()
  * Converts string to md5 hash.
  */
 fun String.md5(): String = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray())).toString(16)
+
+/**
+ *  Prints it.
+ */
+fun <T> T.print() = this.also { println(it) }
+
+/**
+ * Capitalizes the first char of a String.
+ */
+fun String.capitalize() = this.first().titlecase() + this.drop(1)
